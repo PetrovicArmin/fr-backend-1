@@ -1,11 +1,10 @@
 const knexSettings = {
     client: 'pg',
     connection: {
-        host : '127.0.0.1',
-        port : 5432,
-        user : 'postgres',
-        password : 'IloveAllah',
-        database : 'FaceRecognition'
+        connectionString: process.env.DATABASE_URL,
+        ssl: {
+            rejectUnauthorized: false
+        }
     }
 };
 
