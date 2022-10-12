@@ -54,4 +54,4 @@ app.put("/rank", (req, res) => {
 
 //ovo ćemo srediti nakon što napravimo bazu podataka u postgres sqlu!
 
-app.listen(3001);
+app.listen(process.env.PORT || 3000);
