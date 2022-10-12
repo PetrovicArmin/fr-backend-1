@@ -21,9 +21,9 @@ app.post("/register", (req, res) => {
         if (err)
             res.status(400).send("You have some sort of error here!");
 
-        db("Users").insert({name,email}).then(() => {
-            db("Passwords").insert({email,hash}).then(() => {
-                db("Users").select("*").where({email}).then(resp => res.json(resp[0]));
+        db("users").insert({name,email}).then(() => {
+            db("passwords").insert({email,hash}).then(() => {
+                db("users").select("*").where({email}).then(resp => res.json(resp[0]));
             }).catch(err => res.json(err));
         }).catch(err => res.json(err));
     });
