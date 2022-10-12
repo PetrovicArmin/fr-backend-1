@@ -7,7 +7,7 @@ import bcrypt from 'bcrypt';
 const app = express();
 const db = knex(knexSettings);
 
-app.use(cors());
+app.use(cors({origin: "*"}));
 app.use(express.json());
 app.use(express.urlencoded({extended: false}));
 
